@@ -47,7 +47,7 @@ class BannersController extends AppController
 
         $positions = $this->Positions->getList();
         if ($positions->isEmpty()) {
-            $this->Flash->alert(__d('me_cms', 'You must first create a banner position'));
+            $this->Flash->alert(__d('me_cms/banners', 'You must first create a banner position'));
 
             return $this->redirect(['controller' => 'BannersPositions', 'action' => 'index']);
         }

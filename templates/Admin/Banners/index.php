@@ -21,9 +21,9 @@ $this->extend('/Admin/Banners/common/index');
             <th class="text-center"><?= $this->Paginator->sort('id', I18N_ID) ?></th>
             <th><?= $this->Paginator->sort('filename', I18N_FILENAME) ?></th>
             <th class="text-center"><?= $this->Paginator->sort('Positions.title', I18N_POSITION) ?></th>
-            <th class="text-center d-none d-lg-block"><?= __d('me_cms', 'Url') ?></th>
+            <th class="text-center d-none d-lg-block"><?= __d('me_cms/banners', 'Url') ?></th>
             <th class="text-center"><?= I18N_DESCRIPTION ?></th>
-            <th class="text-center"><?= $this->Paginator->sort('click_count', __d('me_cms', 'Click')) ?></th>
+            <th class="text-center"><?= $this->Paginator->sort('click_count', __d('me_cms/banners', 'Click')) ?></th>
             <th class="text-center"><?= $this->Paginator->sort('created', I18N_DATE) ?></th>
         </tr>
     </thead>
@@ -48,7 +48,7 @@ $this->extend('/Admin/Banners/common/index');
 
                     //If the banner is not displayed as a thumbnail
                     if (!$banner->thumbnail) {
-                        echo $this->Html->span(__d('me_cms', 'No thumbnail'), compact('class'));
+                        echo $this->Html->span(__d('me_cms/banners', 'No thumbnail'), compact('class'));
                     }
 
                     $actions = [

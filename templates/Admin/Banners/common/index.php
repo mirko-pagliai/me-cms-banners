@@ -21,7 +21,7 @@ $this->append('actions', $this->Html->button(
 ));
 
 $this->append('actions', $this->Html->button(
-    __d('me_cms', 'Add position'),
+    __d('me_cms/banners', 'Add position'),
     ['controller' => 'BannersPositions', 'action' => 'add'],
     ['class' => 'btn-success', 'icon' => 'plus']
 ));

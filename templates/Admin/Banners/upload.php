@@ -13,17 +13,17 @@ declare(strict_types=1);
  * @license     https://opensource.org/licenses/mit-license.php MIT License
  */
 $this->extend('MeCms./common/form');
-$this->assign('title', __d('me_cms', 'Upload banners'));
+$this->assign('title', __d('me_cms/banners', 'Upload banners'));
 ?>
 
 <div class="card card-body bg-light border-0 mb-4">
     <?= $this->Form->createInline(null, ['type' => 'get']) ?>
     <fieldset>
     <?php
-    echo $this->Form->label('position', __d('me_cms', 'Position where to upload banners'));
+    echo $this->Form->label('position', __d('me_cms/banners', 'Position where to upload banners'));
     echo $this->Form->control('position', [
         'default' => $this->getRequest()->getQuery('position'),
-        'label' => __d('me_cms', 'Position where to upload banners'),
+        'label' => __d('me_cms/banners', 'Position where to upload banners'),
         'onchange' => 'sendForm(this)',
         'options' => $positions,
     ]);

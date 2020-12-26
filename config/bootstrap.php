@@ -41,5 +41,5 @@ if (!Cache::getConfig('banners')) {
 Configure::write('WRITABLE_DIRS', array_merge(Configure::read('WRITABLE_DIRS', []), [BANNERS]));
 
 if (!defined('I18N_BANNERS')) {
-    define('I18N_BANNERS', __d('me_cms', 'Banners'));
+    define('I18N_BANNERS', __d('me_cms/banners', 'Banners'));
 }

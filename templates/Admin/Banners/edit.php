@@ -13,7 +13,7 @@ declare(strict_types=1);
  * @license     https://opensource.org/licenses/mit-license.php MIT License
  */
 $this->extend('MeCms./common/form');
-$this->assign('title', $title = __d('me_cms', 'Edit banner'));
+$this->assign('title', $title = __d('me_cms/banners', 'Edit banner'));
 ?>
 
 <?= $this->Form->create($banner); ?>
@@ -28,9 +28,9 @@ $this->assign('title', $title = __d('me_cms', 'Edit banner'));
             'label' => I18N_PUBLISHED,
         ]);
         echo $this->Form->control('thumbnail', [
-            'help' => __d('me_cms', 'The banner is displayed as a thumbnail. ' .
+            'help' => __d('me_cms/banners', 'The banner is displayed as a thumbnail. ' .
                 'You should disable this, if the banner is an animated gif'),
-            'label' => __d('me_cms', 'Thumbnail'),
+            'label' => __d('me_cms/banners', 'Thumbnail'),
         ]);
         ?>
         </div>
@@ -52,8 +52,8 @@ $this->assign('title', $title = __d('me_cms', 'Edit banner'));
             'label' => I18N_FILENAME,
         ]);
         echo $this->Form->control('target', [
-            'help' => __d('me_cms', 'The address should begin with {0}', '<em>http://</em>'),
-            'label' => __d('me_cms', 'Web address'),
+            'help' => __d('me_cms/banners', 'The address should begin with {0}', '<em>http://</em>'),
+            'label' => __d('me_cms/banners', 'Web address'),
         ]);
         echo $this->Form->control('description', [
             'label' => I18N_DESCRIPTION,

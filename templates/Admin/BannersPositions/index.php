@@ -13,7 +13,7 @@ declare(strict_types=1);
  * @license     https://opensource.org/licenses/mit-license.php MIT License
  */
 $this->extend('MeCms./Admin/common/index');
-$this->assign('title', __d('me_cms', 'Banners positions'));
+$this->assign('title', __d('me_cms/banners', 'Banners positions'));
 
 $this->append('actions', $this->Html->button(
     I18N_ADD,
@@ -21,7 +21,7 @@ $this->append('actions', $this->Html->button(
     ['class' => 'btn-success', 'icon' => 'plus']
 ));
 $this->append('actions', $this->Html->button(
-    __d('me_cms', 'Upload banners'),
+    __d('me_cms/banners', 'Upload banners'),
     ['controller' => 'Banners', 'action' => 'upload'],
     ['class' => 'btn-success', 'icon' => 'plus']
 ));
@@ -33,7 +33,7 @@ $this->append('actions', $this->Html->button(
             <th class="text-center"><?= $this->Paginator->sort('id', I18N_ID) ?></th>
             <th><?= $this->Paginator->sort('title', I18N_TITLE) ?></th>
             <th class="text-center"><?= $this->Paginator->sort('description', I18N_DESCRIPTION) ?></th>
-            <th class="text-center"><?= $this->Paginator->sort('banner_count', __d('me_cms', 'Banners')) ?></th>
+            <th class="text-center"><?= $this->Paginator->sort('banner_count', __d('me_cms/banners', 'Banners')) ?></th>
         </tr>
     </thead>
     <tbody>

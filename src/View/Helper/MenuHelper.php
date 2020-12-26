@@ -54,15 +54,15 @@ class MenuHelper extends Helper
         }
 
         $params = ['controller' => 'Banners', 'plugin' => 'MeCms/Banners', 'prefix' => ADMIN_PREFIX];
-        $links[] = [__d('me_cms', 'List banners'), ['action' => 'index'] + $params];
-        $links[] = [__d('me_cms', 'Upload banners'), ['action' => 'upload'] + $params];
+        $links[] = [__d('me_cms/banners', 'List banners'), ['action' => 'index'] + $params];
+        $links[] = [__d('me_cms/banners', 'Upload banners'), ['action' => 'upload'] + $params];
 
         if ($this->Auth->isGroup('admin')) {
             $params['controller'] = 'BannersPositions';
-            $links[] = [__d('me_cms', 'List positions'), ['action' => 'index'] + $params];
-            $links[] = [__d('me_cms', 'Add position'), ['action' => 'add'] + $params];
+            $links[] = [__d('me_cms/banners', 'List positions'), ['action' => 'index'] + $params];
+            $links[] = [__d('me_cms/banners', 'Add position'), ['action' => 'add'] + $params];
         }
 
-        return [$links, __d('me_cms', 'Banners'), ['icon' => 'shopping-cart'], ['Banners', 'BannersPositions']];
+        return [$links, __d('me_cms/banners', 'Banners'), ['icon' => 'shopping-cart'], ['Banners', 'BannersPositions']];
     }
 }
