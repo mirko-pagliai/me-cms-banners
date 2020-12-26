@@ -28,7 +28,7 @@ $this->assign('title', $title = __d('me_cms', 'Edit banner'));
             'label' => I18N_PUBLISHED,
         ]);
         echo $this->Form->control('thumbnail', [
-            'help' => __d('me_cms', 'The banner is displayed as a  thumbnail. ' .
+            'help' => __d('me_cms', 'The banner is displayed as a thumbnail. ' .
                 'You should disable this, if the banner is an animated gif'),
             'label' => __d('me_cms', 'Thumbnail'),
         ]);
