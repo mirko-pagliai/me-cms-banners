@@ -3,11 +3,12 @@
     <arg value="p"/>
     <file>.</file>
 
-    <exclude-pattern>*/bin/cake*</exclude-pattern>
-
     <rule ref="./vendor/mirko-pagliai/php-tools/sniffer-ruleset.xml"/>
 
     <rule ref="SlevomatCodingStandard.Namespaces.UseFromSameNamespace.UseFromSameNamespace">
         <severity>0</severity>
     </rule>
+
+    <exclude-pattern>/bin</exclude-pattern>
+    <exclude-pattern>/config/Migrations</exclude-pattern>
 </ruleset>

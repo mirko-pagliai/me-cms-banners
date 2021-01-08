@@ -15,8 +15,8 @@ declare(strict_types=1);
 
 namespace MeCms\Banners\Test\TestCase\View\Helper;
 
-use MeCms\View\View;
 use MeCms\TestSuite\TestCase;
+use MeCms\View\View;
 
 /**
  * BannerTest class

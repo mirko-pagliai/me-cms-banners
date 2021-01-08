@@ -17,7 +17,7 @@ namespace MeCms\Banners\Test\Fixture;
 
 use Cake\TestSuite\Fixture\TestFixture;
 
-require_once ROOT . 'config'. DS . 'bootstrap.php';
+require_once ROOT . 'config' . DS . 'bootstrap.php';
 
 /**
  * BannersPositionsFixture
