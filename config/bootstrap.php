@@ -38,7 +38,10 @@ if (!Cache::getConfig('banners')) {
 }
 
 //Sets directories to be created and must be writable
-Configure::write('WRITABLE_DIRS', array_merge(Configure::read('WRITABLE_DIRS', []), [BANNERS]));
+$writableDirs = Configure::read('WRITABLE_DIRS', []);
+if (!in_array(BANNERS, $writableDirs)) {
+    Configure::write('WRITABLE_DIRS', array_merge($writableDirs, [BANNERS]));
+}
 
 if (!defined('I18N_BANNERS')) {
     define('I18N_BANNERS', __d('me_cms/banners', 'Banners'));
