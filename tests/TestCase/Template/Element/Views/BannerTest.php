@@ -38,7 +38,7 @@ class BannerTest extends TestCase
      */
     public function testBannerElement()
     {
-        $banner = $this->getMockForModel('MeCms/Banners.Banners')->find()->contain('Positions')->first();
+        $banner = $this->getTable('MeCms/Banners.Banners')->find()->contain('Positions')->first();
         $element = (new View())->element('MeCms/Banners.views/banner', compact('banner'));
         $this->assertNotEmpty($element);
     }
