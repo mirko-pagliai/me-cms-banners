@@ -35,6 +35,6 @@ $this->assign('title', __d('me_cms/banners', 'Upload banners'));
 
 <?php
 if ($this->getRequest()->getQuery('position')) {
-    echo $this->element('admin/uploader');
+    echo $this->element('MeCms.admin/uploader');
 }
 ?>
