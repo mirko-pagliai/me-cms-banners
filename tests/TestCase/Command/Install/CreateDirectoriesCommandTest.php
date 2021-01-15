@@ -32,6 +32,6 @@ class CreateDirectoriesCommandTest extends TestCase
     public function testExecute()
     {
         $this->exec('me_tools.create_directories -v');
-        $this->assertOutputContains('File or directory `' . (new Filesystem())->rtr(TEST_APP . 'TestApp' . DS . 'webroot' . DS . 'img' . DS . 'banners') . '` already exists');
+        $this->assertOutputContains('File or directory `' . (new Filesystem())->rtr(BANNERS) . '` already exists');
     }
 }
