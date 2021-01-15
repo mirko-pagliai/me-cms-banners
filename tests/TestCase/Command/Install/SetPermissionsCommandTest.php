@@ -12,7 +12,7 @@ declare(strict_types=1);
  * @link        https://github.com/mirko-pagliai/me-cms-banners
  * @license     https://opensource.org/licenses/mit-license.php MIT License
  */
-namespace MeTools\Test\TestCase\Command\Install;
+namespace MeCms\Banners\Test\TestCase\Command\Install;
 
 use MeTools\TestSuite\ConsoleIntegrationTestTrait;
 use MeTools\TestSuite\TestCase;
