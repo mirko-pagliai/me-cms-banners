@@ -16,6 +16,7 @@ namespace MeCms\Banners\Test\TestCase\Command\Install;
 
 use MeTools\TestSuite\ConsoleIntegrationTestTrait;
 use MeTools\TestSuite\TestCase;
+use Tools\Filesystem;
 
 /**
  * CreateDirectoriesCommandTest class
@@ -31,6 +32,6 @@ class CreateDirectoriesCommandTest extends TestCase
     public function testExecute()
     {
         $this->exec('me_tools.create_directories -v');
-        $this->assertOutputContains('File or directory `tests/test_app/TestApp/webroot/img/banners` already exists');
+        $this->assertOutputContains('File or directory `' . (new Filesystem())->rtr(TEST_APP . 'TestApp' . DS . 'webroot' . DS . 'img' . DS . 'banners') . '` already exists');
     }
 }

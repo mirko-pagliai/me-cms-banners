@@ -16,6 +16,7 @@ namespace MeCms\Banners\Test\TestCase\Command\Install;
 
 use MeTools\TestSuite\ConsoleIntegrationTestTrait;
 use MeTools\TestSuite\TestCase;
+use Tools\Filesystem;
 
 /**
  * SetPermissionsCommandTest class
@@ -31,6 +32,6 @@ class SetPermissionsCommandTest extends TestCase
     public function testExecute()
     {
         $this->exec('me_tools.set_permissions -v');
-        $this->assertOutputContains('Setted permissions on `tests/test_app/TestApp/webroot/img/banners`');
+        $this->assertOutputContains('Setted permissions on `' . (new Filesystem())->rtr(TEST_APP . 'TestApp' . DS . 'webroot' . DS . 'img' . DS . 'banners') . '`');
     }
 }
