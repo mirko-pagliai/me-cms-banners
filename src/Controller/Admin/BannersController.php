@@ -17,10 +17,8 @@ namespace MeCms\Banners\Controller\Admin;
 
 use Cake\Event\EventInterface;
 use Cake\Http\Cookie\Cookie;
-use Cake\Http\Exception\InternalErrorException;
 use Cake\Http\Response;
 use MeCms\Controller\Admin\AppController;
-use Tools\Exceptionist;
 
 /**
  * Banners controller
@@ -104,24 +102,25 @@ class BannersController extends AppController
 
     /**
      * Uploads banners
-     * @return void
-     * @throws \Cake\Http\Exception\InternalErrorException
+     * @return \Cake\Http\Response|null
      * @uses \MeCms\Controller\Admin\AppController::setUploadError()
-     * @uses \MeTools\Controller\Component\UploaderComponent
      */
-    public function upload(): void
+    public function upload(): ?Response
     {
         $position = $this->getRequest()->getQuery('position');
         $positions = $this->viewBuilder()->getVar('positions')->toArray();
 
         //If there's only one available position
         if (!$position && count($positions) < 2) {
-            $position = array_key_first($positions);
-            $this->setRequest($this->getRequest()->withQueryParams(compact('position')));
+            return $this->redirect(['?' => ['position' => array_key_first($positions)]]);
         }
 
         if ($this->getRequest()->getData('file')) {
-            Exceptionist::isTrue($position, __d('me_cms', 'Missing ID'), InternalErrorException::class);
+            if (!$position) {
+                $this->setUploadError(I18N_MISSING_ID);
+
+                return null;
+            }
 
             $uploaded = $this->Uploader->set($this->getRequest()->getData('file'))
                 ->mimetype('image')
@@ -130,7 +129,7 @@ class BannersController extends AppController
             if (!$uploaded) {
                 $this->setUploadError($this->Uploader->getError());
 
-                return;
+                return null;
             }
 
             $entity = $this->Banners->newEntity([
@@ -141,13 +140,15 @@ class BannersController extends AppController
             if ($entity->getErrors()) {
                 $this->setUploadError(array_value_first_recursive($entity->getErrors()));
 
-                return;
+                return null;
             }
 
             if (!$this->Banners->save($entity)) {
                 $this->setUploadError(I18N_OPERATION_NOT_OK);
             }
         }
+
+        return null;
     }
 
     /**
