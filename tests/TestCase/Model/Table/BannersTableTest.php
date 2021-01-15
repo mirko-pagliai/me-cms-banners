@@ -47,7 +47,7 @@ class BannersTableTest extends TableTestCase
         $entity = $this->Table->get(1);
         $this->assertFileExists($entity->get('path'));
         $this->assertTrue($this->Table->delete($entity));
-        $this->assertFileNotExists($entity->get('path'));
+        $this->assertFileDoesNotExist($entity->get('path'));
     }
 
     /**
