@@ -25,7 +25,9 @@ $routes->scope('/', ['plugin' => 'MeCms/Banners'], function (RouteBuilder $route
             ->setPatterns(['id' => '\d+'])
             ->setPass(['id']);
     }
+});
 
+$routes->plugin('MeCms/Banners', ['path' => '/me-cms-banners'], function (RouteBuilder $routes) {
     //Admin routes
     $routes->prefix(ADMIN_PREFIX, function (RouteBuilder $routes) {
         $routes->setExtensions(['json']);
