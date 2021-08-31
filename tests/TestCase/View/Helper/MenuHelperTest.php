@@ -26,7 +26,7 @@ class MenuHelperTest extends MenuHelperTestCase
      * Tests for `banners()` method
      * @test
      */
-    public function testBanners()
+    public function testBanners(): void
     {
         $this->assertEmpty($this->Helper->banners());
 

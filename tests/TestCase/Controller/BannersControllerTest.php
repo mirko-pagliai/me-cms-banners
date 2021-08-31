@@ -34,7 +34,7 @@ class BannersControllerTest extends ControllerTestCase
      * Tests for `open()` method
      * @test
      */
-    public function testOpen()
+    public function testOpen(): void
     {
         $this->get(['_name' => 'banner', '1']);
         $this->assertRedirect('http://www.example.com');

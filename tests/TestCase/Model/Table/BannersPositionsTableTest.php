@@ -41,7 +41,7 @@ class BannersPositionsTableTest extends TableTestCase
      * Test for `buildRules()` method
      * @test
      */
-    public function testBuildRules()
+    public function testBuildRules(): void
     {
         $example = ['title' => 'my-title'];
 
@@ -58,7 +58,7 @@ class BannersPositionsTableTest extends TableTestCase
      * Test for `initialize()` method
      * @test
      */
-    public function testInitialize()
+    public function testInitialize(): void
     {
         $this->assertEquals('banners_positions', $this->Table->getTable());
         $this->assertEquals('title', $this->Table->getDisplayField());

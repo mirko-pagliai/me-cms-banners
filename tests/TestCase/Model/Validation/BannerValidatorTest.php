@@ -39,7 +39,7 @@ class BannerValidatorTest extends ValidationTestCase
      * Test validation for `position_id` property
      * @test
      */
-    public function testValidationForPositionId()
+    public function testValidationForPositionId(): void
     {
         $errors = $this->Table->newEntity(['position_id' => 'string'] + $this->example)->getErrors();
         $this->assertEquals(['position_id' => ['naturalNumber' => I18N_SELECT_VALID_OPTION]], $errors);
@@ -49,7 +49,7 @@ class BannerValidatorTest extends ValidationTestCase
      * Test validation for `filename` property
      * @test
      */
-    public function testValidationForFilename()
+    public function testValidationForFilename(): void
     {
         $errors = $this->Table->newEntity(['filename' => str_repeat('a', 252) . '.gif'] + $this->example)->getErrors();
         $this->assertEquals(['filename' => ['maxLength' => 'Must be at most 255 chars']], $errors);
@@ -67,7 +67,7 @@ class BannerValidatorTest extends ValidationTestCase
      * Test validation for `target` property
      * @test
      */
-    public function testValidationForTarget()
+    public function testValidationForTarget(): void
     {
         $errors = $this->Table->newEntity(['target' => 'str'] + $this->example)->getErrors();
         $this->assertEquals(['target' => ['url' => 'Must be a valid url']], $errors);
@@ -86,7 +86,7 @@ class BannerValidatorTest extends ValidationTestCase
      * Test validation for `thumbnail` property
      * @test
      */
-    public function testValidationForThumbnail()
+    public function testValidationForThumbnail(): void
     {
         $errors = $this->Table->newEntity(['thumbnail' => 'str'] + $this->example)->getErrors();
         $this->assertEquals(['thumbnail' => ['boolean' => I18N_SELECT_VALID_OPTION]], $errors);
