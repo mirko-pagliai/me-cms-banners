@@ -21,6 +21,7 @@ use MeCms\TestSuite\TableTestCase;
 
 /**
  * BannersTableTest class
+ * @property \MeCms\Banners\Model\Table\BannersTable $Table
  */
 class BannersTableTest extends TableTestCase
 {

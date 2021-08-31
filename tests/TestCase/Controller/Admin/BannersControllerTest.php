@@ -22,6 +22,7 @@ use MeCms\TestSuite\ControllerTestCase;
 
 /**
  * BannersControllerTest class
+ * @property \MeCms\Banners\Model\Table\BannersTable $Table
  */
 class BannersControllerTest extends ControllerTestCase
 {

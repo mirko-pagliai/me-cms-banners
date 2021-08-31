@@ -17,6 +17,7 @@ namespace MeCms\Banners\Model\Table;
 
 use Cake\Datasource\EntityInterface;
 use Cake\Event\Event;
+use Cake\ORM\Query as CakeQuery;
 use Cake\ORM\RulesChecker;
 use MeCms\Banners\Model\Table\BannersPositionsTable;
 use MeCms\Banners\Model\Validation\BannerValidator;
@@ -95,11 +96,11 @@ class BannersTable extends AppTable
 
     /**
      * Build query from filter data
-     * @param \MeCms\ORM\Query $query Query object
+     * @param \Cake\ORM\Query $query Query object
      * @param array $data Filter data (`$this->getRequest()->getQueryParams()`)
-     * @return \MeCms\ORM\Query $query Query object
+     * @return \Cake\ORM\Query $query Query object
      */
-    public function queryFromFilter(Query $query, array $data = []): Query
+    public function queryFromFilter(CakeQuery $query, array $data = []): CakeQuery
     {
         $query = parent::queryFromFilter($query, $data);
 

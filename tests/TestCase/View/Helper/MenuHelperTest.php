@@ -19,6 +19,7 @@ use MeCms\TestSuite\MenuHelperTestCase;
 
 /**
  * MenuHelperTest class
+ * @property \MeCms\Banners\View\Helper\MenuHelper $Helper
  */
 class MenuHelperTest extends MenuHelperTestCase
 {

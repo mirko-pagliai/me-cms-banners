@@ -20,6 +20,7 @@ use MeCms\TestSuite\TableTestCase;
 
 /**
  * BannersPositionsTableTest class
+ * @property \MeCms\Banners\Model\Table\BannersPositionsTable $Table
  */
 class BannersPositionsTableTest extends TableTestCase
 {

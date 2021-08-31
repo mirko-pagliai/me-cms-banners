@@ -22,6 +22,7 @@ use MeCms\Model\Table\AppTable;
 
 /**
  * BannersPositions model
+ * @property \Cake\ORM\Association&\MeCms\Banners\Model\Table\BannersTable $Banners
  */
 class BannersPositionsTable extends AppTable
 {
