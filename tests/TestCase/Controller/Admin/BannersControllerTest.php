@@ -122,7 +122,7 @@ class BannersControllerTest extends ControllerTestCase
         //POST request. This works
         $file = $this->createImageToUpload();
         $this->post($url + ['_ext' => 'json'], compact('file'));
-        $this->assertResponseOkAndNotEmpty();
+        $this->assertResponseOk();
         $record = $this->Table->find()->last();
         $this->assertEquals(1, $record->get('position_id'));
         $this->assertEquals($file['name'], $record->get('filename'));
@@ -207,7 +207,7 @@ class BannersControllerTest extends ControllerTestCase
     public function testDownload(): void
     {
         $this->get($this->url + ['action' => 'download', 1]);
-        $this->assertResponseOkAndNotEmpty();
+        $this->assertResponseOk();
         $this->assertFileResponse($this->Table->get(1)->get('path'));
     }
 
