@@ -74,12 +74,12 @@ $this->append('actions', $this->Html->button(
                     <?php
                     if ($position->get('banner_count')) {
                         echo $this->Html->link(
-                            $position->get('banner_count'),
+                            (string)$position->get('banner_count'),
                             ['controller' => 'Banners', 'action' => 'index', '?' => ['position' => $position->get('id')]],
                             ['title' => I18N_BELONG_ELEMENT]
                         );
                     } else {
-                        echo $position->get('banner_count');
+                        echo (string)$position->get('banner_count');
                     }
                     ?>
                 </td>

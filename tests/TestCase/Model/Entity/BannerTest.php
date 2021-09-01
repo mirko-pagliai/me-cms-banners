@@ -37,7 +37,7 @@ class BannerTest extends EntityTestCase
      * Test for fields that cannot be mass assigned
      * @test
      */
-    public function testNoAccessibleProperties()
+    public function testNoAccessibleProperties(): void
     {
         $this->assertHasNoAccessibleProperty(['id', 'modified']);
     }
@@ -46,7 +46,7 @@ class BannerTest extends EntityTestCase
      * Test for `_getPath()` method
      * @test
      */
-    public function testPathGetMutator()
+    public function testPathGetMutator(): void
     {
         $this->assertEquals(BANNERS . 'example.gif', $this->Entity->get('path'));
     }
@@ -55,7 +55,7 @@ class BannerTest extends EntityTestCase
      * Test for `_getDescription()` method
      * @test
      */
-    public function testDescriptionAccessors()
+    public function testDescriptionAccessors(): void
     {
         $this->assertNotNull($this->Entity->get('description'));
         $this->assertSame('', $this->Entity->set('description', null)->get('description'));
@@ -65,7 +65,7 @@ class BannerTest extends EntityTestCase
      * Test for `_getWww()` method
      * @test
      */
-    public function testWwwGetMutator()
+    public function testWwwGetMutator(): void
     {
         $this->assertEquals(BANNERS_WWW . 'example.gif', $this->Entity->get('www'));
     }

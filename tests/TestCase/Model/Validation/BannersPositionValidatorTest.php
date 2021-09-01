@@ -39,7 +39,7 @@ class BannersPositionValidatorTest extends ValidationTestCase
      * Test validation for `title` property
      * @test
      */
-    public function testValidatorForTitle()
+    public function testValidatorForTitle(): void
     {
         foreach (['ab', str_repeat('a', 101)] as $title) {
             $errors = $this->Table->newEntity(compact('title') + $this->example)->getErrors();

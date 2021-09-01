@@ -33,10 +33,10 @@ class BannersController extends AppController
      * You can use this method to perform logic that needs to happen before
      *   each controller action
      * @param \Cake\Event\EventInterface $event An Event instance
-     * @return \Cake\Http\Response|null
+     * @return \Cake\Http\Response|null|void
      * @uses \MeCms\Banners\Model\Table\BannersPositions::getList()
      */
-    public function beforeFilter(EventInterface $event): ?Response
+    public function beforeFilter(EventInterface $event)
     {
         $result = parent::beforeFilter($event);
         if ($result) {
@@ -65,7 +65,7 @@ class BannersController extends AppController
     public function isAuthorized($user = null): bool
     {
         //Only admins can delete banners. Admins and managers can access other actions
-        return $this->Auth->isGroup($this->getRequest()->isDelete() ? ['admin'] : ['admin', 'manager']);
+        return $this->Auth->isGroup($this->getRequest()->is('delete') ? ['admin'] : ['admin', 'manager']);
     }
 
     /**
@@ -122,7 +122,7 @@ class BannersController extends AppController
                 return null;
             }
 
-            $uploaded = $this->Uploader->set($this->getRequest()->getData('file'))
+            $uploaded = $this->Uploader->setFile($this->getRequest()->getData('file'))
                 ->mimetype('image')
                 ->save(BANNERS);
 

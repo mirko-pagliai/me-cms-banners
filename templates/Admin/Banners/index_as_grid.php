@@ -46,7 +46,7 @@ $this->extend('/Admin/Banners/common/index');
                 }
 
                 $actions = [
-                    $this->Html->button(null, ['action' => 'edit', $banner->get('id')], [
+                    $this->Html->button('', ['action' => 'edit', $banner->get('id')], [
                         'class' => 'btn-link',
                         'icon' => 'pencil-alt',
                         'title' => I18N_EDIT,
@@ -54,7 +54,7 @@ $this->extend('/Admin/Banners/common/index');
                 ];
 
                 if ($banner->has('target')) {
-                    $actions[] = $this->Html->button(null, $banner->get('target'), [
+                    $actions[] = $this->Html->button('', $banner->get('target'), [
                         'class' => 'btn-link',
                         'icon' => 'external-link-alt',
                         'title' => I18N_OPEN,
@@ -62,7 +62,7 @@ $this->extend('/Admin/Banners/common/index');
                     ]);
                 }
 
-                $actions[] = $this->Html->button(null, ['action' => 'download', $banner->get('id')], [
+                $actions[] = $this->Html->button('', ['action' => 'download', $banner->get('id')], [
                     'class' => 'btn-link',
                     'icon' => 'download',
                     'title' => I18N_DOWNLOAD,
@@ -70,7 +70,7 @@ $this->extend('/Admin/Banners/common/index');
 
                 //Only admins can delete banners
                 if ($this->Auth->isGroup('admin')) {
-                    $actions[] = $this->Form->postButton(null, ['action' => 'delete', $banner->get('id')], [
+                    $actions[] = $this->Form->postButton('', ['action' => 'delete', $banner->get('id')], [
                         'class' => 'btn-link text-danger',
                         'icon' => 'trash-alt',
                         'title' => I18N_DELETE,

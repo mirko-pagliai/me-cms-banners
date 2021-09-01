@@ -19,6 +19,7 @@ use MeCms\TestSuite\MenuHelperTestCase;
 
 /**
  * MenuHelperTest class
+ * @property \MeCms\Banners\View\Helper\MenuHelper $Helper
  */
 class MenuHelperTest extends MenuHelperTestCase
 {
@@ -26,7 +27,7 @@ class MenuHelperTest extends MenuHelperTestCase
      * Tests for `banners()` method
      * @test
      */
-    public function testBanners()
+    public function testBanners(): void
     {
         $this->assertEmpty($this->Helper->banners());
 

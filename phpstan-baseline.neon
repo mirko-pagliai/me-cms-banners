@@ -1,0 +1,87 @@
+parameters:
+	ignoreErrors:
+		-
+			message: "#^Variable \\$this might not be defined\\.$#"
+			count: 24
+			path: templates/Admin/Banners/common/index.php
+
+		-
+			message: "#^Variable \\$banner might not be defined\\.$#"
+			count: 4
+			path: templates/Admin/Banners/edit.php
+
+		-
+			message: "#^Variable \\$this might not be defined\\.$#"
+			count: 13
+			path: templates/Admin/Banners/edit.php
+
+		-
+			message: "#^Variable \\$banners might not be defined\\.$#"
+			count: 1
+			path: templates/Admin/Banners/index.php
+
+		-
+			message: "#^Variable \\$this might not be defined\\.$#"
+			count: 18
+			path: templates/Admin/Banners/index.php
+
+		-
+			message: "#^Variable \\$banners might not be defined\\.$#"
+			count: 1
+			path: templates/Admin/Banners/index_as_grid.php
+
+		-
+			message: "#^Variable \\$this might not be defined\\.$#"
+			count: 10
+			path: templates/Admin/Banners/index_as_grid.php
+
+		-
+			message: "#^Variable \\$positions might not be defined\\.$#"
+			count: 1
+			path: templates/Admin/Banners/upload.php
+
+		-
+			message: "#^Variable \\$this might not be defined\\.$#"
+			count: 10
+			path: templates/Admin/Banners/upload.php
+
+		-
+			message: "#^Variable \\$position might not be defined\\.$#"
+			count: 1
+			path: templates/Admin/BannersPositions/add.php
+
+		-
+			message: "#^Variable \\$this might not be defined\\.$#"
+			count: 7
+			path: templates/Admin/BannersPositions/add.php
+
+		-
+			message: "#^Variable \\$position might not be defined\\.$#"
+			count: 1
+			path: templates/Admin/BannersPositions/edit.php
+
+		-
+			message: "#^Variable \\$this might not be defined\\.$#"
+			count: 7
+			path: templates/Admin/BannersPositions/edit.php
+
+		-
+			message: "#^Variable \\$positions might not be defined\\.$#"
+			count: 1
+			path: templates/Admin/BannersPositions/index.php
+
+		-
+			message: "#^Variable \\$this might not be defined\\.$#"
+			count: 17
+			path: templates/Admin/BannersPositions/index.php
+
+		-
+			message: "#^Variable \\$banner might not be defined\\.$#"
+			count: 6
+			path: templates/element/views/banner.php
+
+		-
+			message: "#^Variable \\$this might not be defined\\.$#"
+			count: 2
+			path: templates/element/views/banner.php
+

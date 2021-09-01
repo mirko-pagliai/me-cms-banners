@@ -21,6 +21,7 @@ use MeCms\TestSuite\TableTestCase;
 
 /**
  * BannersTableTest class
+ * @property \MeCms\Banners\Model\Table\BannersTable $Table
  */
 class BannersTableTest extends TableTestCase
 {
@@ -42,7 +43,7 @@ class BannersTableTest extends TableTestCase
      * Test for event methods
      * @test
      */
-    public function testEventMethods()
+    public function testEventMethods(): void
     {
         $entity = $this->Table->get(1);
         $this->assertFileExists($entity->get('path'));
@@ -54,7 +55,7 @@ class BannersTableTest extends TableTestCase
      * Test for `buildRules()` method
      * @test
      */
-    public function testBuildRules()
+    public function testBuildRules(): void
     {
         $example = ['position_id' => 1, 'filename' => 'pic.jpg'];
 
@@ -75,7 +76,7 @@ class BannersTableTest extends TableTestCase
      * Test for `initialize()` method
      * @test
      */
-    public function testInitialize()
+    public function testInitialize(): void
     {
         $this->assertEquals('banners', $this->Table->getTable());
         $this->assertEquals('filename', $this->Table->getDisplayField());
@@ -94,7 +95,7 @@ class BannersTableTest extends TableTestCase
      * Test for associations
      * @test
      */
-    public function testAssociations()
+    public function testAssociations(): void
     {
         $position = $this->Table->findById(2)->contain('Positions')->extract('position')->first();
         $this->assertInstanceOf(BannersPosition::class, $position);
@@ -105,7 +106,7 @@ class BannersTableTest extends TableTestCase
      * Test for `find()` methods
      * @test
      */
-    public function testFindMethods()
+    public function testFindMethods(): void
     {
         $query = $this->Table->find('active');
         $this->assertStringEndsWith('FROM banners Banners WHERE Banners.active = :c0', $query->sql());
@@ -116,7 +117,7 @@ class BannersTableTest extends TableTestCase
      * Test for `queryFromFilter()` method
      * @test
      */
-    public function testQueryFromFilter()
+    public function testQueryFromFilter(): void
     {
         $query = $this->Table->queryFromFilter($this->Table->find(), ['position' => 2]);
         $this->assertStringEndsWith('FROM banners Banners WHERE position_id = :c0', $query->sql());

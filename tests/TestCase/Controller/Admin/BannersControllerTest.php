@@ -22,6 +22,7 @@ use MeCms\TestSuite\ControllerTestCase;
 
 /**
  * BannersControllerTest class
+ * @property \MeCms\Banners\Model\Table\BannersTable $Table
  */
 class BannersControllerTest extends ControllerTestCase
 {
@@ -57,7 +58,7 @@ class BannersControllerTest extends ControllerTestCase
      * @return void
      * @test
      */
-    public function testBeforeFilter()
+    public function testBeforeFilter(): void
     {
         parent::testBeforeFilter();
 
@@ -71,7 +72,7 @@ class BannersControllerTest extends ControllerTestCase
      * @return void
      * @test
      */
-    public function testIndex()
+    public function testIndex(): void
     {
         $this->get($this->url + ['action' => 'index']);
         $this->assertResponseOkAndNotEmpty();
@@ -85,7 +86,7 @@ class BannersControllerTest extends ControllerTestCase
      * @return void
      * @test
      */
-    public function testIndexAsGrid()
+    public function testIndexAsGrid(): void
     {
         $this->get($this->url + ['action' => 'index', '?' => ['render' => 'grid']]);
         $this->assertResponseOkAndNotEmpty();
@@ -106,7 +107,7 @@ class BannersControllerTest extends ControllerTestCase
      * @return void
      * @test
      */
-    public function testUpload()
+    public function testUpload(): void
     {
         $url = $this->url + ['action' => 'upload'];
 
@@ -122,7 +123,7 @@ class BannersControllerTest extends ControllerTestCase
         //POST request. This works
         $file = $this->createImageToUpload();
         $this->post($url + ['_ext' => 'json'], compact('file'));
-        $this->assertResponseOkAndNotEmpty();
+        $this->assertResponseOk();
         $record = $this->Table->find()->last();
         $this->assertEquals(1, $record->get('position_id'));
         $this->assertEquals($file['name'], $record->get('filename'));
@@ -144,7 +145,7 @@ class BannersControllerTest extends ControllerTestCase
      * @return void
      * @test
      */
-    public function testUploadErrors()
+    public function testUploadErrors(): void
     {
         $url = $this->url + ['action' => 'upload', '_ext' => 'json'];
 
@@ -178,7 +179,7 @@ class BannersControllerTest extends ControllerTestCase
      * @return void
      * @test
      */
-    public function testEdit()
+    public function testEdit(): void
     {
         $url = $this->url + ['action' => 'edit', 1];
 
@@ -204,10 +205,10 @@ class BannersControllerTest extends ControllerTestCase
      * @return void
      * @test
      */
-    public function testDownload()
+    public function testDownload(): void
     {
         $this->get($this->url + ['action' => 'download', 1]);
-        $this->assertResponseOkAndNotEmpty();
+        $this->assertResponseOk();
         $this->assertFileResponse($this->Table->get(1)->get('path'));
     }
 
@@ -216,7 +217,7 @@ class BannersControllerTest extends ControllerTestCase
      * @return void
      * @test
      */
-    public function testDelete()
+    public function testDelete(): void
     {
         $record = $this->Table->get(1);
         $this->assertFileExists($record->get('path'));
@@ -232,7 +233,7 @@ class BannersControllerTest extends ControllerTestCase
      * Tests for `isAuthorized()` method
      * @test
      */
-    public function testIsAuthorized()
+    public function testIsAuthorized(): void
     {
         parent::testIsAuthorized();
 

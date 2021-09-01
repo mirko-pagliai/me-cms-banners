@@ -36,7 +36,7 @@ class BannerTest extends TestCase
      * Test for `views/banner.php` template element
      * @test
      */
-    public function testBannerElement()
+    public function testBannerElement(): void
     {
         $banner = $this->getTable('MeCms/Banners.Banners')->find()->contain('Positions')->first();
         $element = (new View())->element('MeCms/Banners.views/banner', compact('banner'));
