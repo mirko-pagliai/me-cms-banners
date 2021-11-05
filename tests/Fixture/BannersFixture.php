@@ -94,7 +94,7 @@ class BannersFixture extends TestFixture
      */
     public function drop(ConnectionInterface $db): bool
     {
-        (new Filesystem())->unlinkRecursive(BANNERS, 'empty', true);
+        Filesystem::instance()->unlinkRecursive(BANNERS, 'empty', true);
 
         return parent::drop($db);
     }
@@ -109,7 +109,7 @@ class BannersFixture extends TestFixture
     public function insert(ConnectionInterface $db)
     {
         foreach ($this->records as $record) {
-            (new Filesystem())->createFile(BANNERS . $record['filename'], null, 0777, true);
+            Filesystem::instance()->createFile(BANNERS . $record['filename'], null, 0777, true);
         }
 
         return parent::insert($db);
