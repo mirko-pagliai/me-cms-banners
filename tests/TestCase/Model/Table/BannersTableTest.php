@@ -26,11 +26,6 @@ use MeCms\TestSuite\TableTestCase;
 class BannersTableTest extends TableTestCase
 {
     /**
-     * @var bool
-     */
-    public $autoFixtures = false;
-
-    /**
      * Fixtures
      * @var array
      */
@@ -97,7 +92,7 @@ class BannersTableTest extends TableTestCase
      */
     public function testAssociations(): void
     {
-        $position = $this->Table->findById(2)->contain('Positions')->extract('position')->first();
+        $position = $this->Table->findById(2)->contain('Positions')->all()->extract('position')->first();
         $this->assertInstanceOf(BannersPosition::class, $position);
         $this->assertEquals(1, $position->id);
     }
@@ -109,7 +104,7 @@ class BannersTableTest extends TableTestCase
     public function testFindMethods(): void
     {
         $query = $this->Table->find('active');
-        $this->assertStringEndsWith('FROM banners Banners WHERE Banners.active = :c0', $query->sql());
+        $this->assertSqlEndsWith('FROM banners Banners WHERE Banners.active = :c0', $query->sql());
         $this->assertTrue($query->getValueBinder()->bindings()[':c0']['value']);
     }
 
@@ -120,11 +115,11 @@ class BannersTableTest extends TableTestCase
     public function testQueryFromFilter(): void
     {
         $query = $this->Table->queryFromFilter($this->Table->find(), ['position' => 2]);
-        $this->assertStringEndsWith('FROM banners Banners WHERE position_id = :c0', $query->sql());
+        $this->assertSqlEndsWith('FROM banners Banners WHERE position_id = :c0', $query->sql());
         $this->assertEquals(2, $query->getValueBinder()->bindings()[':c0']['value']);
 
         $query = $this->Table->queryFromFilter($this->Table->find(), ['filename' => 'image.jpg']);
-        $this->assertStringEndsWith('FROM banners Banners WHERE Banners.filename like :c0', $query->sql());
+        $this->assertSqlEndsWith('FROM banners Banners WHERE Banners.filename like :c0', $query->sql());
         $this->assertEquals('%image.jpg%', $query->getValueBinder()->bindings()[':c0']['value']);
 
         //With some invalid datas

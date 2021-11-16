@@ -12,7 +12,8 @@
     ],
     "require": {
         "php": ">=7.2",
-        "mirko-pagliai/me-cms": "^2.30.1"
+        "mirko-pagliai/me-cms": "^2.30.1",
+        "mirko-pagliai/me-tools": "^2.20.7"
     },
     "require-dev": {
         "cakephp/cakephp-codesniffer": "^4.0",

@@ -25,11 +25,6 @@ use MeCms\TestSuite\TableTestCase;
 class BannersPositionsTableTest extends TableTestCase
 {
     /**
-     * @var bool
-     */
-    public $autoFixtures = false;
-
-    /**
      * Fixtures
      * @var array
      */

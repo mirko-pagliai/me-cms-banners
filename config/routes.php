@@ -21,7 +21,7 @@ $routes->setRouteClass(DashedRoute::class);
 $routes->scope('/', ['plugin' => 'MeCms/Banners'], function (RouteBuilder $routes) {
     //Banner
     if (!$routes->nameExists('banner')) {
-        $routes->connect('/banner/:id', ['controller' => 'Banners', 'action' => 'open'], ['_name' => 'banner'])
+        $routes->connect('/banner/{id}', ['controller' => 'Banners', 'action' => 'open'], ['_name' => 'banner'])
             ->setPatterns(['id' => '\d+'])
             ->setPass(['id']);
     }
