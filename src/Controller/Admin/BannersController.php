@@ -43,7 +43,7 @@ class BannersController extends AppController
             return $result;
         }
 
-        $positions = $this->Positions->getList();
+        $positions = $this->Positions->getList()->all();
         if ($positions->isEmpty()) {
             $this->Flash->alert(__d('me_cms/banners', 'You must first create a banner position'));
 
@@ -127,7 +127,7 @@ class BannersController extends AppController
                 ->save(BANNERS);
 
             if (!$uploaded) {
-                $this->setUploadError($this->Uploader->getError());
+                $this->setUploadError($this->Uploader->getError() ?: '');
 
                 return null;
             }
