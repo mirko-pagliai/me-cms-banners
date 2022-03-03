@@ -31,9 +31,9 @@ if (!Cache::getConfig('banners')) {
     Cache::setConfig('banners', [
         'className' => 'File',
         'duration' => '+999 days',
-        'prefix' => '',
+        'prefix' => 'me_cms_banners',
         'mask' => 0777,
-        'path' => CACHE . 'me_cms_banners',
+        'path' => CACHE . 'me_cms',
     ]);
 }
 
