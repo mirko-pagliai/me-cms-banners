@@ -2,8 +2,8 @@
 
 [![Software License](https://img.shields.io/badge/license-MIT-brightgreen.svg?style=flat-square)](LICENSE.txt)
 [![Build Status](https://api.travis-ci.com/mirko-pagliai/me-cms-banners.svg?branch=master)](https://travis-ci.com/mirko-pagliai/me-cms-banners)
-[![Build status](https://ci.appveyor.com/api/projects/status/bh8uc59s5nwuk456?svg=true)](https://ci.appveyor.com/project/mirko-pagliai/me-cms-banners)
 [![codecov](https://codecov.io/gh/mirko-pagliai/me-cms-banners/branch/master/graph/badge.svg?token=2G1HR8CVWG)](https://codecov.io/gh/mirko-pagliai/me-cms-banners)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/8ede1aceb5cc47ec8b3c6fb23cbaee72)](https://www.codacy.com/gh/mirko-pagliai/me-cms-banners/dashboard?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=mirko-pagliai/me-cms-banners&amp;utm_campaign=Badge_Grade)
 [![CodeFactor](https://www.codefactor.io/repository/github/mirko-pagliai/me-cms-banners/badge)](https://www.codefactor.io/repository/github/mirko-pagliai/me-cms-banners)
 
 *MeCms/Banners* plugin allows you to handle banners with [MeCms platform](//github.com/mirko-pagliai/cakephp-for-mecms).
