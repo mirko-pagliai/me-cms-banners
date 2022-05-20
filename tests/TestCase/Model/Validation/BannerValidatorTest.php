@@ -25,7 +25,7 @@ class BannerValidatorTest extends ValidationTestCase
     /**
      * @var array
      */
-    protected $example = ['position_id' => 1, 'filename' => 'pic.jpg'];
+    protected array $example = ['position_id' => 1, 'filename' => 'pic.jpg'];
 
     /**
      * Fixtures
