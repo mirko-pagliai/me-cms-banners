@@ -46,7 +46,7 @@ class BannerTest extends EntityTestCase
      * Test for `_getPath()` method
      * @test
      */
-    public function testPathGetMutator(): void
+    public function testGetPathVirtualField(): void
     {
         $this->assertEquals(BANNERS . 'example.gif', $this->Entity->get('path'));
     }
@@ -55,7 +55,7 @@ class BannerTest extends EntityTestCase
      * Test for `_getDescription()` method
      * @test
      */
-    public function testDescriptionAccessors(): void
+    public function testDescriptionAccessor(): void
     {
         $this->assertNotNull($this->Entity->get('description'));
         $this->assertSame('', $this->Entity->set('description', null)->get('description'));
@@ -65,7 +65,7 @@ class BannerTest extends EntityTestCase
      * Test for `_getWww()` method
      * @test
      */
-    public function testWwwGetMutator(): void
+    public function testGetWwwVirtualField(): void
     {
         $this->assertEquals(BANNERS_WWW . 'example.gif', $this->Entity->get('www'));
     }

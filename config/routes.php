@@ -18,7 +18,7 @@ use Cake\Routing\RouteBuilder;
 /** @var \Cake\Routing\RouteBuilder $routes */
 $routes->setRouteClass(DashedRoute::class);
 
-$routes->scope('/', ['plugin' => 'MeCms/Banners'], function (RouteBuilder $routes) {
+$routes->scope('/', ['plugin' => 'MeCms/Banners'], function (RouteBuilder $routes): void {
     //Banner
     if (!$routes->nameExists('banner')) {
         $routes->connect('/banner/{id}', ['controller' => 'Banners', 'action' => 'open'], ['_name' => 'banner'])
@@ -27,9 +27,9 @@ $routes->scope('/', ['plugin' => 'MeCms/Banners'], function (RouteBuilder $route
     }
 });
 
-$routes->plugin('MeCms/Banners', ['path' => '/me-cms-banners'], function (RouteBuilder $routes) {
+$routes->plugin('MeCms/Banners', ['path' => '/me-cms-banners'], function (RouteBuilder $routes): void {
     //Admin routes
-    $routes->prefix(ADMIN_PREFIX, function (RouteBuilder $routes) {
+    $routes->prefix(ADMIN_PREFIX, function (RouteBuilder $routes): void {
         $routes->setExtensions(['json']);
 
         $routes->fallbacks('DashedRoute');
