@@ -11,7 +11,7 @@
         }
     ],
     "require": {
-        "php": ">=7.2",
+        "php": ">=7.4",
         "mirko-pagliai/me-cms": "^2.30.1",
         "mirko-pagliai/me-tools": "^2.20.7",
         "mirko-pagliai/php-tools": "1.5.7",
