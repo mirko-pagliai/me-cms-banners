@@ -108,9 +108,7 @@ class BannersFixture extends TestFixture
      */
     public function insert(ConnectionInterface $connection)
     {
-        foreach ($this->records as $record) {
-            Filesystem::instance()->createFile(BANNERS . $record['filename'], null, 0777, true);
-        }
+        array_map(fn(array $record) => Filesystem::instance()->createFile(BANNERS . $record['filename'], null, 0777, true), $this->records);
 
         return parent::insert($connection);
     }

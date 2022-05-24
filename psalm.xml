@@ -20,24 +20,11 @@
     </projectFiles>
 
     <issueHandlers>
-        <ImplementedReturnTypeMismatch>
-            <errorLevel type="suppress">
-                <directory name="src/Model/Table" />
-            </errorLevel>
-        </ImplementedReturnTypeMismatch>
-
         <InternalMethod>
             <errorLevel type="suppress">
                 <directory name="tests/TestCase" />
             </errorLevel>
         </InternalMethod>
-
-        <InvalidArgument>
-            <errorLevel type="suppress">
-                <directory name="src/Controller" />
-                <directory name="tests/TestCase/Controller" />
-            </errorLevel>
-        </InvalidArgument>
 
         <InvalidScope>
             <errorLevel type="suppress">
@@ -45,15 +32,7 @@
             </errorLevel>
         </InvalidScope>
 
-        <UndefinedGlobalVariable>
-            <errorLevel type="suppress">
-                <directory name="templates" />
-            </errorLevel>
-        </UndefinedGlobalVariable>
-
         <UndefinedConstant errorLevel="suppress" />
-        <UndefinedMagicMethod errorLevel="suppress" />
-        <UndefinedMethod errorLevel="suppress" />
-        <UndefinedThisPropertyFetch errorLevel="suppress" />
+        <UndefinedGlobalVariable errorLevel="suppress" />
     </issueHandlers>
 </psalm>

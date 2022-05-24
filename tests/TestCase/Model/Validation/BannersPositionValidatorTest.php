@@ -25,7 +25,7 @@ class BannersPositionValidatorTest extends ValidationTestCase
     /**
      * @var array
      */
-    protected $example = ['title' => 'my-title'];
+    protected array $example = ['title' => 'my-title'];
 
     /**
      * Fixtures

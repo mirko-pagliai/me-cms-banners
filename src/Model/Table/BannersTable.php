@@ -34,7 +34,7 @@ class BannersTable extends AppTable
      * Cache configuration name
      * @var string
      */
-    protected $cache = 'banners';
+    protected string $cache = 'banners';
 
     /**
      * Called after an entity has been deleted
@@ -105,12 +105,12 @@ class BannersTable extends AppTable
         $query = parent::queryFromFilter($query, $data);
 
         //"Position" field
-        if (!empty($data['position']) && is_positive($data['position'])) {
+        if (is_positive($data['position'] ?? 0)) {
             $query->where(['position_id' => $data['position']]);
         }
 
         //"Filename" field
-        if (!empty($data['filename']) && strlen($data['filename']) > 2) {
+        if (strlen($data['filename'] ?? '') > 2) {
             $query->where([sprintf('%s.%s LIKE', $this->getAlias(), 'filename') => '%' . $data['filename'] . '%']);
         }
 

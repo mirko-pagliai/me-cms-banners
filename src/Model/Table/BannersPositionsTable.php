@@ -30,7 +30,7 @@ class BannersPositionsTable extends AppTable
      * Cache configuration name
      * @var string
      */
-    protected $cache = 'banners';
+    protected string $cache = 'banners';
 
     /**
      * Returns a rules checker object that will be used for validating

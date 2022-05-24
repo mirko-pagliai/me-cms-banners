@@ -34,7 +34,6 @@ class BannersController extends AppController
      *   each controller action
      * @param \Cake\Event\EventInterface $event An Event instance
      * @return \Cake\Http\Response|null|void
-     * @uses \MeCms\Banners\Model\Table\BannersPositions::getList()
      */
     public function beforeFilter(EventInterface $event)
     {
